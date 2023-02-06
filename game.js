@@ -4,32 +4,36 @@ function getComputerChoice() {
     return choices[Math.floor(Math.random()* choices.length)]
 }
 
-let playerSelection = prompt("type: rock, paper or scissors.");
+let playerSelection = prompt("type: rock, paper or scissors.").toLowerCase();
 let computerSelection = getComputerChoice();
 
 function playGame(playerSelection, computerSelection) {
-    if (playerSelection === cpuSelection) {
-        alert("It's a draw!")
+    if (playerSelection == computerSelection) {
+        return ("It's a draw!")
     }
     else if (playerSelection === "rock" && computerSelection === "scissors") {
-        alert("You Win! Rock beats Scissors.");
+        return ("You Win! Rock beats Scissors.");
     }
     else if (playerSelection === "rock" && computerSelection === "paper") {
-        alert("You Lose! Paper beats Rock.");
+        return ("You Lose! Paper beats Rock.");
     }
     else if (playerSelection === "paper" && computerSelection === "rock") {
-        alert("You Win! Paper beats Rock.");
+        return ("You Win! Paper beats Rock.");
     }
     else if (playerSelection === "paper" && computerSelection === "scissors") {
-        alert("You Lose! Scissors beats Papers.");
+        return ("You Lose! Scissors beats Papers.");
     }
     else if (playerSelection === "scissors" && computerSelection === "paper") {
-        alert("You Win! Scissors beats Paper.");
+        return ("You Win! Scissors beats Paper.");
     }
     else if (playerSelection === "scissors" && computerSelection === "rock") {
-        alert("You Lose! Rock beats Scissors.");
+        return ("You Lose! Rock beats Scissors.");
     }
     else {
-        alert("Something went wrong...");
+        return ("Something went wrong...");
     }
+
 }
+
+let result = playGame(playerSelection, computerSelection);
+console.log(result);
